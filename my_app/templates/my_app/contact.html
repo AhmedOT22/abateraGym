@@ -1,0 +1,17 @@
+{% include 'header.html' %}  <!-- Including header -->
+
+<form id="contact-form" method="POST" action="{% url 'contact_submit' %}">
+  {% csrf_token %}
+  <input type="text" name="first_name" placeholder="First Name"/>
+  <input type="text" name="last_name" placeholder="Last Name"/>
+  <input type="tel" name="phone_number" placeholder="Phone Number"/>
+  <input type="email" name="email_address" placeholder="Email Address"/>
+  <input type="text" name="object" placeholder="Subject"/>
+  
+  <label for="message">Message</label>
+  <textarea name="message" id="message" tabindex="5"></textarea>
+  
+  <button name="submit" type="submit" id="contact-submit">Submit</button>
+</form>
+
+{% include 'footer.html' %}  <!-- Including footer -->
